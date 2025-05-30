@@ -1,0 +1,107 @@
+@use "variables" as *;
+
+@mixin font-extra-small {
+  font-size: 0.950rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+@mixin font-small {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+@mixin font-medium {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+@mixin weight-bold {
+  font-weight: 700;
+}
+@mixin weight-normal {
+  font-weight: 400;
+}
+@mixin weight-light {
+  font-weight: 300;
+}
+
+@mixin table-basic{
+    width: 100%;
+    border-radius: 8px;
+    background-color: $white;
+
+    thead {
+        background: $green-100;
+        
+        th {
+        color: $text-500;
+        padding: 16px 12px;
+        text-align: left;
+        letter-spacing: 0.5px;
+        border-bottom: $border-light;
+        }
+    }
+
+    tbody tr {
+      position: relative;
+      &:nth-child(odd) {
+        td:not(:last-of-type){
+          background:  $gray-100;
+        }
+      }
+      &:hover {
+
+        td:not(:last-of-type){
+          background: $green-50;
+        }
+
+        .button-cell {
+          opacity: 1;
+        }
+      }
+  }
+
+  td {
+    padding: 12px;
+    color: $text-100;
+    td:not(:last-of-type){
+      border-bottom: $border-light;
+    }
+  }
+
+  .button-cell{
+    position: relative;
+    opacity: 0;
+
+    position: absolute;
+    right: -5px;
+    transform: translateY(-0%);
+  }
+
+  .button-cell .button{
+    position: relative;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    background-color: $white;
+    padding: 5px 10px;
+
+    &:first-of-type{
+      margin-right: 5px;
+    }
+
+  
+    transition: ease-in-out 0.3s;
+
+    &:hover {
+      background-color: $gray-100;
+    }
+  }
+
+  .width-200{
+    width: 200px;
+  }
+}

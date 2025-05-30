@@ -1,0 +1,34 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+//reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $gray-100;
+  color: $text-100;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.font-medium{
+  @include font-medium;
+}
+.font-small{
+  @include font-small;
+}
+.font-extra-small{
+  @include font-extra-small;
+}
+.weight-bold{
+  @include weight-bold;
+}
+.weight-normal{
+  @include weight-normal;
+}
+.weight-light{
+  @include weight-light;
+}

@@ -1,18 +1,37 @@
-//variables
-$blue-100: #e2edf5;
-$blue-200: #c8dbe9;
+/* Organizando as cores */
+$white: #ffffff;
 
-$white: #fff;
-$gray-50: #f5f5f5;
-$gray-100: #f8f8f8;
-$gray-200: #e7dfdfdc;
-$gray-300: #e0dede;
-$text-100: #494949;
-$text-500: #000000;
-$border-light: 1px solid #e0e7ef;
-$green-50: #77a379;
-$green-50: #a6cfa8;
-$green-100: #649465;
-$green-200: #326134;
-$orange-100: #fdaf39;
-$orange-200: #c05f04;
+$dark-gray: #5e6b77;
+$medium-gray: #88929e;
+$light-gray: #f8f9fa;
+$gray-50: #fdfdfe;
+$gray-100: #f4f6f9;
+$gray-50: #fdfdfe; 
+$gray-200: #e9ecef;
+$gray-300: #dee2e6; 
+
+$text-100: #e0e6ec;
+$text-300: #aebacd;
+$text-400: #88929e;
+$text-500: #62748a;
+$text-600: #3c4a5c;
+$text-700: #2c3e50;
+
+$border-light: #ced4da;
+$border-default: #d1d9e6;
+
+$green-100: #28a745;
+$green-200: #218838;
+
+$dark-blue: #2c3e50;
+$blue-100: #007bff; 
+$blue-200: #0069d9;
+$light-blue-background: #e9f5ff;
+$light-blue-border: #cce0ff;
+
+$red-error: #dc3545;
+
+$primary-dark: #34495e;
+$primary-brand-color: #3498db;
+
+$hover-row-color: #f0f7ff;

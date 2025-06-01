@@ -1,25 +1,36 @@
 {
   "students": [
     {
-      "id": "2",
-      "ra": 456798,
-      "name": "Nome do aluno 2",
-      "degreeId": 2,
-      "classId": 1
+      "id": "1910",
+      "name": "Joana Pereira",
+      "ra": 3232,
+      "degree": "11",
+      "class": "3",
+      "degreeId": 11,
+      "classId": 3
     },
     {
-      "id": "4",
-      "ra": 852348,
-      "name": "Nome do aluno 4",
+      "id": "1317",
+      "name": "Ricardo Ribas",
+      "ra": 43435,
+      "degree": "9",
+      "class": "5",
+      "degreeId": 9,
+      "classId": 5
+    },
+    {
+      "id": "1540",
+      "name": "Aluno-7phknxh9",
+      "ra": 93763,
+      "degreeId": 3,
+      "classId": 6
+    },
+    {
+      "id": "2335",
+      "name": "Aluno-bz0ij61c",
+      "ra": 27012,
       "degreeId": 4,
-      "classId": 2
-    },
-    {
-      "id": "5",
-      "ra": 454643,
-      "name": "Nome do aluno 5",
-      "degreeId": 6,
-      "classId": 2
+      "classId": 3
     }
   ],
   "degrees": [
@@ -71,27 +82,27 @@
   "classes": [
     {
       "name": "A",
-      "id": "56ee"
+      "id": "1"
     },
     {
       "name": "B",
-      "id": "e093"
+      "id": "2"
     },
     {
       "name": "C",
-      "id": "1950"
+      "id": "3"
     },
     {
       "name": "D",
-      "id": "ee95"
+      "id": "4"
     },
     {
       "name": "E",
-      "id": "56b1"
+      "id": "5"
     },
     {
       "name": "F",
-      "id": "10e3"
+      "id": "6"
     }
   ],
   "relashionships": [

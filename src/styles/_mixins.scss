@@ -28,80 +28,131 @@
   font-weight: 300;
 }
 
-@mixin table-basic{
+.table-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-top: 40px;
     width: 100%;
-    border-radius: 8px;
-    background-color: $white;
+}
 
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: $white;
+    
     thead {
-        background: $green-100;
+        background: $primary-dark;
         
+        tr {
+            th:first-child { border-top-left-radius: 12px; }
+            th:last-child { border-top-right-radius: 12px; }
+        }
+
         th {
-        color: $text-500;
-        padding: 16px 12px;
-        text-align: left;
-        letter-spacing: 0.5px;
-        border-bottom: $border-light;
+            color: $white;
+            padding: 16px 15px;
+            text-align: left;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+
+        .actions-header {
+            text-align: center;
         }
     }
 
-    tbody tr {
-      position: relative;
-      &:nth-child(odd) {
-        td:not(:last-of-type){
-          background:  $gray-100;
+    tbody {
+        tr {
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s ease;
+
+            &:nth-child(even) {
+                td:not(.action-buttons-cell) {
+                    background: $gray-50;
+                }
+            }
+
+            &:hover {
+                background-color: $hover-row-color;
+                
+                td:not(.action-buttons-cell) {
+                    background: $hover-row-color;
+                }
+
+                .action-buttons-cell {
+                    opacity: 1;
+                }
+            }
         }
-      }
-      &:hover {
-
-        td:not(:last-of-type){
-          background: $green-50;
-        }
-
-        .button-cell {
-          opacity: 1;
-        }
-      }
-  }
-
-  td {
-    padding: 12px;
-    color: $text-100;
-    td:not(:last-of-type){
-      border-bottom: $border-light;
-    }
-  }
-
-  .button-cell{
-    position: relative;
-    opacity: 0;
-
-    position: absolute;
-    right: -5px;
-    transform: translateY(-0%);
-  }
-
-  .button-cell .button{
-    position: relative;
-
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 20px;
-    background-color: $white;
-    padding: 5px 10px;
-
-    &:first-of-type{
-      margin-right: 5px;
     }
 
-  
-    transition: ease-in-out 0.3s;
-
-    &:hover {
-      background-color: $gray-100;
+    td {
+        padding: 14px 15px;
+        color: $text-700;
+        font-size: 0.95rem;
+        border-bottom: 1px solid $border-light;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+        
+        &:first-child:last-child {
+            border-bottom-left-radius: 12px;
+        }
+        &:last-child:last-child {
+            border-bottom-right-radius: 12px;
+        }
     }
-  }
 
-  .width-200{
-    width: 200px;
-  }
+    .width-100 { width: 100px; }
+    .width-200 { width: 200px; }
+
+    .action-buttons-cell {
+        position: absolute;
+        right: 0px;
+        transform: translateY(-10%);
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        display: flex;
+        gap: 8px;
+        background-color: transparent;
+    }
+
+    .action-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        cursor: pointer;
+
+        .material-icons {
+            font-size: 18px !important;
+        }
+
+        &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        &:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .delete-button {
+        background-color: $red-error;
+        color: $white;
+    }
+
+    .edit-button {
+        background-color: $primary-brand-color;
+        color: $white;
+    }
 }

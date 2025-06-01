@@ -1,34 +1,104 @@
 @use 'variables' as *;
 @use 'mixins' as *;
+@use 'sass:color';
 
 //reset
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: ease-in-out 0.3s;
 }
 
 body {
-  background-color: $gray-100;
-  color: $text-100;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	background-color: $gray-100;
+	color: $text-100;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.font-medium{
-  @include font-medium;
+.font-medium {
+	@include font-medium;
 }
-.font-small{
-  @include font-small;
+
+.font-small {
+	@include font-small;
 }
-.font-extra-small{
-  @include font-extra-small;
+
+.font-extra-small {
+	@include font-extra-small;
 }
-.weight-bold{
-  @include weight-bold;
+
+.weight-bold {
+	@include weight-bold;
 }
-.weight-normal{
-  @include weight-normal;
+
+.weight-normal {
+	@include weight-normal;
 }
-.weight-light{
-  @include weight-light;
+
+.weight-light {
+	@include weight-light;
+}
+
+
+button.has-icon {
+	padding-left: 40px;
+	position: relative;
+	
+	.material-icons {
+		font-size: 18px !important;
+		margin-right: 5px;
+		position: absolute;
+		bottom: 32%;
+		left: 8%;
+	}
+}
+
+button.disabled {
+	background-color: $gray-200;
+	color: $text-100;
+	cursor: not-allowed;
+}
+
+input,
+select {
+	width: 100%;
+	padding: 10px;
+	border: $border-light;
+	border-radius: 4px;
+	font-size: 16px;
+	color: $text-500;
+	background-color: $white;
+	margin: 5px 0;
+
+	&::placeholder {
+		color: $text-300;
+		opacity: 1;
+	}
+
+	&:focus {
+		border-color: $blue-200;
+		outline: none;
+	}
+}
+
+.btn-primary {
+	background-color: $blue-200;
+	color: $white;
+	font-size: 18px;
+	font-weight: 600;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+
+	&:hover {
+		background-color: color.adjust($blue-100, $lightness: 10%);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	}
+
+	&:active {
+		transform: translateY(1px);
+	}
 }

@@ -10,7 +10,7 @@
       "@hooks/*": ["src/hooks/*"],
       "@data/*": ["data/*"],
       "@config/*": ["src/config/*"],
-
+      "@context/*": ["src/context/*"],
     },
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",

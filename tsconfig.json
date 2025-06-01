@@ -18,6 +18,7 @@
       "@hooks/*": ["src/hooks/*"],
       "@data/*": ["data/*"],
       "@config/*": ["src/config/*"],
+      "@context/*": ["src/context/*"],
     }
   }
 }

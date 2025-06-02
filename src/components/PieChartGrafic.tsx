@@ -4,13 +4,7 @@ type TPieChartGrafic = {
 	data : Array<{name:string, value: number}>
 }
 
-const data = [
-	{ name: 'Serie A', value: 400 },
-	{ name: 'Serie B', value: 300 },
-	{ name: 'Serie C', value: 300 },
-	{ name: 'Serie D', value: 200 },
-];
-const COLORS = ['#0069d9', '#28a745', '#dc3545', '#3498db','#f39c12','#8e44ad','#e67e22','#1abc9c','#e84393' ];
+const COLORS = ['#0069d9', '#28a745', '#cf41e7', '#3498db','#f39c12','#8e44ad','#e67e22','#1abc9c','#e84393' ];
 
 const RADIAN = Math.PI / 180;
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
@@ -43,7 +37,7 @@ function PieChartGrafic(props: TPieChartGrafic) {
 					dataKey="value"
             		label={renderCustomizedLabel}
 				>
-					{data.map((entry, index) => (
+					{props.data.map((entry, index) => (
 						<Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
 					))}
 				</Pie>

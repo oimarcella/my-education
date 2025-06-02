@@ -6,7 +6,7 @@ import type { TStudent } from "@/models/TStudent";
 import { useNavigate } from "react-router-dom";
 import useStudentsContext from "@/context/StudentsContext";
 
-const QUANTITY_STUDENTS = 2; // Define a constant for the number of students to generate
+const QUANTITY_STUDENTS = 5;
 
 const Students = () => {
     const [students, setStudents] = useState([] as TStudent[]);
@@ -52,8 +52,8 @@ const Students = () => {
        <div className={`${styles["page"]}`}>
             <div className={`${styles["header"]}`}>
                 <h1 className={`${styles["title"]}`}>Gestão de Estudantes</h1>
-                <button className={`btn-primary`} onClick={() => redirectToAddStudent()}>
-                    Cadastrar Novo Aluno
+                <button className={`btn btn-primary fit-content`} onClick={() => redirectToAddStudent()}>
+                    Cadastrar novo aluno
                 </button>
             </div>
 
@@ -64,7 +64,7 @@ const Students = () => {
                 </div>
             </div>
 
-			<button className={`btn-primary ${styles["btn-random-generation"]} ${isLoading && "disabled"} has-icon`} onClick={handleMassiveGenerationStudents}>
+			<button className={`btn btn-primary ${styles["btn-random-generation"]} ${isLoading && "disabled"} has-icon`} onClick={handleMassiveGenerationStudents}>
 				<span className="material-icons">
 				autorenew
 				</span> 

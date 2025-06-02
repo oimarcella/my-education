@@ -63,7 +63,14 @@
         }
     }
 
+    .empty-row td{
+        text-align: center;
+        color: $dark-gray;
+        background: $gray-100;
+    }
     tbody {
+        
+
         tr {
             cursor: pointer;
             position: relative;

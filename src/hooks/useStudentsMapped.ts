@@ -43,7 +43,7 @@ function useStudentsMapped(props: TUseStudentsMappedHook = {}) {
 	useEffect(() => {
 
 		async function fetchData() {
-			if (props.students && props.students.length > 0) {
+			if (props.students ) {
 				setStudents(props.students);
 			} else {
 				const studentsData = await getStudents()

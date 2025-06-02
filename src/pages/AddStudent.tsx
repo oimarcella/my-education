@@ -66,7 +66,7 @@ function AddStudent(){
 
     return(
     <div className={`${styles["new-student-page"]}`}>
-    <h1 className={`${styles["page-title"]}`}>Cadastrar Novo Estudante</h1>
+    <h1 className={`${styles["page-title"]}`}>Cadastrar novo aluno</h1>
 
     <form onSubmit={handleSubmit} className={`${styles["student-form"]}`}>
         <div className={`${styles["form-group"]}`}>
@@ -132,8 +132,8 @@ function AddStudent(){
         </div>
         
         <div className={`${styles["form-actions"]}`}>
-            <button type="submit" className={`btn-primary ${styles["submit-button"]}`}>Salvar Estudante</button>
-            <button type="button" onClick={() => {navigateTo("/")}} className={`${styles["back-button"]}`}>Voltar para Início</button>
+            <button type="submit" className={`btn btn-primary ${styles["submit-button"]}`}>Salvar Estudante</button>
+            <button type="button" onClick={() => {navigateTo("/")}} className={`btn btn-secondary ${styles["back-button"]}`}>Voltar para Início</button>
         </div>
     </form>
 </div>

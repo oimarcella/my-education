@@ -40,12 +40,23 @@ function TableStudents() {
 		setFilteredStudents(filtered);
 	}
 
+	function clearSearch(){
+		setFilters({
+			ra: ""
+		});
+		notifyUpdateStudent();
+	}
+
 	return (
 		<div className={styles['table-container']}>
 			<div className={styles["filters"]}>
 				<form onSubmit={handleSubmit}>
 					<input type="number" placeholder='RA' name='ra' id='ra' min={0} onChange={handleChange} value={filters.ra}/>
-					<button type='submit'>Filtrar</button>
+					<button type='submit' className='btn btn-primary'>Filtrar</button>
+					{/* TODO - botao para limpar pesquisa
+					<button>Limpar</button>
+					*/}
+					<button onClick={clearSearch} className="btn btn-secondary">Limpar</button>
 				</form>
 			</div>
 			<table className={styles.table}>
@@ -78,6 +89,12 @@ function TableStudents() {
 							</td>
 						</tr>
 					))}
+					{
+						students.length == 0 &&
+						<tr className={` ${styles["empty-row"]}`}>
+							<td className='font-small' colSpan={6}>Nenhum resultado encontrado</td>
+						</tr>
+					}
 				</tbody>
 			</table>
 		</div>

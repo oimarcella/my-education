@@ -5,30 +5,65 @@ import { createMassiveStudents, getStudents } from "@/services/student.service";
 import type { TStudent } from "@/models/TStudent";
 import { useNavigate } from "react-router-dom";
 import useStudentsContext from "@/context/StudentsContext";
+import PieChartGrafic from "@/components/PieChartGrafic";
+import useStudentsMapped from "@/hooks/useStudentsMapped";
 
-const QUANTITY_STUDENTS = 5;
+const QUANTITY_STUDENTS = 10;
 
 const Students = () => {
     const [students, setStudents] = useState([] as TStudent[]);
     const navigateTo = useNavigate();
     const {needUpdateStudent, notifyUpdateStudent} = useStudentsContext();
     const [isLoading, setIsLoading] = useState(false);
+    const { students: studentsMapped } = useStudentsMapped();
+    const [dataClasses, setDataClasses] = useState(Array<{name:string, value:number}> || []);
 
     async function fetchStudents() {
         const studentsFetched = await getStudents();
         setStudents( studentsFetched);
     }
+
+    function getStudentsByClass(): Array<{name:string, value:number}>{
+        const data = studentsMapped.reduce((accumulator, item)=>{
+            let classe = item.classTitle;
+            let groupFound = accumulator.find(group => group.name == `Classe ${classe}`)
+
+            if(groupFound){
+                groupFound.value++;
+            }
+            else{
+                accumulator.push({
+                    name: `Classe ${item.classTitle}`,
+                    value: 1
+                })
+            }
+            return accumulator
+        }, [] as Array<{name:string, value:number}>);
+
+        return data;
+    }
     
     useEffect(()=>{
         fetchStudents();
+        const dataGraphics = getStudentsByClass();
+        setDataClasses(dataGraphics);
     }, []);
 
      useEffect(()=>{
         if(needUpdateStudent){
             fetchStudents();
+            const dataGraphics = getStudentsByClass();
+            setDataClasses(dataGraphics);
             notifyUpdateStudent()
         }
-    }, [needUpdateStudent]);
+    }, [needUpdateStudent, studentsMapped]);
+
+    useEffect(() => {
+    if (studentsMapped && studentsMapped.length > 0) {
+        const dataGraphics = getStudentsByClass();
+        setDataClasses(dataGraphics);
+    }
+}, [studentsMapped]);
 
     function redirectToAddStudent() {
         navigateTo("/cadastrar-estudante");
@@ -46,9 +81,7 @@ const Students = () => {
         notifyUpdateStudent();
     }
 
-
-
-    return (
+return (
        <div className={`${styles["page"]}`}>
             <div className={`${styles["header"]}`}>
                 <h1 className={`${styles["title"]}`}>Gestão de Estudantes</h1>
@@ -61,6 +94,9 @@ const Students = () => {
                 <div className={`${styles["stat-box"]}`}>
                     <span className={`${styles["stat-number"]}`}>{students.length}</span>
                     <span className={`${styles["stat-label"]}`}>Total de Alunos</span>
+                </div>
+                <div className={`${styles["stat-box"]}`}>
+                    <PieChartGrafic data={dataClasses}/>
                 </div>
             </div>
 

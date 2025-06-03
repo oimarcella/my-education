@@ -48,4 +48,6 @@ Algumas das coisas que fiz podem ser demais para esse projeto, já que é pequen
 - Separação de pastas em componentes e páginas, pensando também numa futura organização 
 ### Escolha do SASS
 - Usei SASS pela rapidez e pelas facilidades que ele oferece, e o CSS modules para não ter conflitos de classes de estilizações
+### Faltaram testes
+- Implementaria alguns testes de interface com Jest e Testing Library 
 

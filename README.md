@@ -5,7 +5,10 @@
 <img src="print1.png" alt="Tela inicial e tabela de alunos" width="300">
 <img src="print2.png" alt="Cadastro de novo aluno" width="300">
 
-## Rodando o projeto
+## Instalando e rodando o projeto
+
+### Instalando dependências
+- Rode ```npm i``` na raíz do projeto
 
 ### Rodando o servidor backend
 Isso vai subir um servidor fake para poder simular que temos uma API funcionando, é bom que ele seja iniciado antes da interface.

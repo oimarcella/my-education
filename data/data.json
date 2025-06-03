@@ -19,53 +19,74 @@
       "classId": 5
     },
     {
-      "id": "1540",
-      "name": "Aluno-7phknxh9",
-      "ra": 93763,
-      "degreeId": 3,
-      "classId": 6
-    },
-    {
-      "id": "2335",
-      "name": "Aluno-bz0ij61c",
-      "ra": 27012,
+      "id": 9504,
+      "name": "Aluno-bbckl58g",
+      "ra": 68510,
       "degreeId": 4,
-      "classId": 3
-    },
-    {
-      "id": 5077,
-      "name": "Aluno-0tnrhw7u",
-      "ra": 71246,
-      "degreeId": 1,
-      "classId": 1
-    },
-    {
-      "id": 7432,
-      "name": "Aluno-a7xb8y6u",
-      "ra": 60561,
-      "degreeId": 5,
       "classId": 4
     },
     {
-      "id": 6076,
-      "name": "Aluno-hliswlo7",
-      "ra": 10962,
-      "degreeId": 7,
-      "classId": 6
+      "id": 6544,
+      "name": "Aluno-lqjkn3sw",
+      "ra": 19037,
+      "degreeId": 9,
+      "classId": 4
     },
     {
-      "id": 3900,
-      "name": "Aluno-abr11j37",
-      "ra": 62306,
+      "id": 6929,
+      "name": "Aluno-qu13zalb",
+      "ra": 49813,
+      "degreeId": 1,
+      "classId": 4
+    },
+    {
+      "id": 7629,
+      "name": "Aluno-wdgyr6zt",
+      "ra": 69225,
       "degreeId": 13,
-      "classId": 1
+      "classId": 4
     },
     {
-      "id": 3202,
-      "name": "Aluno-yu59rboi",
-      "ra": 96527,
+      "id": 2039,
+      "name": "Aluno-hgjnfwml",
+      "ra": 25343,
+      "degreeId": 12,
+      "classId": 5
+    },
+    {
+      "id": 7002,
+      "name": "Aluno-tant4ho7",
+      "ra": 56872,
+      "degreeId": 8,
+      "classId": 3
+    },
+    {
+      "id": 2293,
+      "name": "Aluno-hofrftt3",
+      "ra": 31454,
+      "degreeId": 1,
+      "classId": 5
+    },
+    {
+      "id": 8208,
+      "name": "Aluno-ksgq4put",
+      "ra": 35927,
+      "degreeId": 2,
+      "classId": 5
+    },
+    {
+      "id": 7164,
+      "name": "Aluno-0kh6caaj",
+      "ra": 92487,
       "degreeId": 7,
-      "classId": 2
+      "classId": 5
+    },
+    {
+      "id": 6517,
+      "name": "Aluno-p24lfrrf",
+      "ra": 57829,
+      "degreeId": 7,
+      "classId": 1
     }
   ],
   "degrees": [

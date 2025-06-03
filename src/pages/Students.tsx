@@ -8,7 +8,7 @@ import useStudentsContext from "@/context/StudentsContext";
 import PieChartGrafic from "@/components/PieChartGrafic";
 import useStudentsMapped from "@/hooks/useStudentsMapped";
 
-const QUANTITY_STUDENTS = 10;
+const QUANTITY_STUDENTS = 300;
 
 const Students = () => {
     const [students, setStudents] = useState([] as TStudent[]);
@@ -86,7 +86,12 @@ return (
             <div className={`${styles["header"]}`}>
                 <h1 className={`${styles["title"]}`}>Gestão de Estudantes</h1>
                 <button className={`btn btn-primary fit-content`} onClick={() => redirectToAddStudent()}>
-                    Cadastrar novo aluno
+                    <span className="onlyMobile">
+                        Novo aluno
+                    </span>
+                    <span className="onlyDesk">
+                        Cadastrar novo aluno
+                    </span>
                 </button>
             </div>
 
@@ -104,11 +109,17 @@ return (
 				<span className="material-icons">
 				autorenew
 				</span> 
-				Gerar + {QUANTITY_STUDENTS} alunos
+
+                    <span className="onlyDesk">
+                        Gerar + {QUANTITY_STUDENTS} alunos
+                    </span>
+				  <span className="onlyMobile">
+                    + {QUANTITY_STUDENTS} alunos
+                  </span>
 			</button>
 
-            <p className={`${styles["table-info"]}`}>
-                Interaja com as linhas da tabela para visualizar detalhes ou realizar ações.
+            <p className={`${styles["table-info"]} ${styles.onlyDesk}`}>
+                Passe o cursor sobre as linhas da tabela para visualizar detalhes ou realizar ações.
             </p>
 			
 

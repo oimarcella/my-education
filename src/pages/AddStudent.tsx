@@ -132,8 +132,8 @@ function AddStudent(){
         </div>
         
         <div className={`${styles["form-actions"]}`}>
-            <button type="submit" className={`btn btn-primary ${styles["submit-button"]}`}>Salvar Estudante</button>
-            <button type="button" onClick={() => {navigateTo("/")}} className={`btn btn-secondary ${styles["back-button"]}`}>Voltar para Início</button>
+            <button type="submit" className={`btn btn-primary ${styles["submit-button"]}`}>Salvar</button>
+            <button type="button" onClick={() => {navigateTo("/")}} className={`btn btn-secondary ${styles["back-button"]}`}>Voltar</button>
         </div>
     </form>
 </div>

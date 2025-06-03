@@ -59,44 +59,53 @@ function TableStudents() {
 					<button onClick={clearSearch} className="btn btn-secondary">Limpar</button>
 				</form>
 			</div>
-			<table className={styles.table}>
-				<thead>
-					<tr>
-						<th className={`font-extra-small weight-bold ${styles["width-100"]}`}>ID</th>
-						<th className={`font-extra-small weight-bold ${styles["width-100"]}`}>RA</th>
-						<th className='font-extra-small weight-bold'>Nome</th>
-						<th className={`font-extra-small weight-bold`}>Série</th>
-						<th className={`font-extra-small weight-bold ${styles["width-200"]}`}>Classe</th>
-						<th className={styles['actions-header']}></th>
-					</tr>
-				</thead>
-				<tbody>
-					{students.map((student) => (
-						<tr key={student.id}>
-							<td className='font-small'>{student.id}</td>
-							<td className='font-small'>{student.ra}</td>
-							<td className='font-small'>{student.name}</td>
-							<td className='font-small'>{student.degreeName}</td>
-							<td className='font-small' colSpan={2}>{student.classTitle}</td>
+			<p className={`${styles["table-info"]} ${styles.onlyMobile}`}>
+				É possível rolar para a direita, em telas menores, para que consiga ver o restante dos dados da tabela.
+				<br/>
+				Para ver os botões basta clicar na linha.
+			</p>
+			<div className={`${styles["table-wrapper-responsive"]}`}>
 
-							<td className={styles['action-buttons-cell']}>
-								<span className={`${styles['action-button']} ${styles['delete-button']}`} onClick={() => handleDelete(student.id)}>
-									<span className="material-icons" style={{ fontSize: 16 }}>delete</span>
-								</span>
-								<span className={`${styles['action-button']} ${styles['edit-button']}`} onClick={() => editStudent(student.id)}>
-									<span className="material-icons" style={{ fontSize: 16 }}>edit</span>
-								</span>
-							</td>
+
+				<table className={styles.table}>
+					<thead>
+						<tr>
+							<th className={`font-extra-small weight-bold ${styles["width-100"]}`}>ID</th>
+							<th className={`font-extra-small weight-bold ${styles["width-100"]}`}>RA</th>
+							<th className='font-extra-small weight-bold'>Nome</th>
+							<th className={`font-extra-small weight-bold`}>Série</th>
+							<th className={`font-extra-small weight-bold ${styles["width-200"]}`}>Classe</th>
+							<th className={styles['actions-header']}></th>
 						</tr>
-					))}
-					{
-						students.length == 0 &&
-						<tr className={` ${styles["empty-row"]}`}>
-							<td className='font-small' colSpan={6}>Nenhum resultado encontrado</td>
-						</tr>
-					}
-				</tbody>
-			</table>
+					</thead>
+					<tbody>
+						{students.map((student) => (
+							<tr key={student.id}>
+								<td className='font-small'>{student.id}</td>
+								<td className='font-small'>{student.ra}</td>
+								<td className='font-small'>{student.name}</td>
+								<td className='font-small'>{student.degreeName}</td>
+								<td className='font-small' colSpan={2}>{student.classTitle}</td>
+
+								<td className={styles['action-buttons-cell']}>
+									<span className={`${styles['action-button']} ${styles['delete-button']}`} onClick={() => handleDelete(student.id)}>
+										<span className="material-icons" style={{ fontSize: 16 }}>delete</span>
+									</span>
+									<span className={`${styles['action-button']} ${styles['edit-button']}`} onClick={() => editStudent(student.id)}>
+										<span className="material-icons" style={{ fontSize: 16 }}>edit</span>
+									</span>
+								</td>
+							</tr>
+						))}
+						{
+							students.length == 0 &&
+							<tr className={` ${styles["empty-row"]}`}>
+								<td className='font-small' colSpan={6}>Nenhum resultado encontrado</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
 		</div>
 	);
 }

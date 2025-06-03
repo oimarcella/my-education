@@ -32,11 +32,20 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-    margin-top: 40px;
     width: 100%;
+    padding: 20px 10px;
+
+
+    @media (max-width: 700px) {
+        .table-wrapper-responsive{
+            overflow-x: auto;
+        }
+    }
+    
 }
 
 .table {
+    min-width: 572px;
     width: 100%;
     border-collapse: collapse;
     background-color: $white;
@@ -126,6 +135,10 @@
         display: flex;
         gap: 8px;
         background-color: transparent;
+
+        @media (max-width: 700px) {
+            transform: translateY(20%);
+        }
     }
 
     .action-button {

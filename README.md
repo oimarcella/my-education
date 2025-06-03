@@ -1,6 +1,11 @@
-My Education App
+# My Education App
 
-# Rodando o projeto
+
+<img src="print0.png" alt="Tela inicial e dados gerais" width="300">
+<img src="print1.png" alt="Tela inicial e tabela de alunos" width="300">
+<img src="print2.png" alt="Cadastro de novo aluno" width="300">
+
+## Rodando o projeto
 
 ### Rodando o servidor backend
 Isso vai subir um servidor fake para poder simular que temos uma API funcionando, é bom que ele seja iniciado antes da interface.
@@ -27,7 +32,7 @@ http://localhost:5173/editar-estudante/id
 http://localhost:5173/professores
 
 
-# Comentários
+## Comentários
 
 ### Adicionei um servidor backend "fake" para servir como API
 Imaginei que seria interessante poder ter no frontend uma camada de integração com uma API externa, então lembrei de uma biblioteca que
